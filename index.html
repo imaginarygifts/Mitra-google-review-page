@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Review Miत्रा</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#000;
+  color:#fff;
+}
+.container{
+  max-width:420px;
+  margin:auto;
+  padding:24px 18px 40px;
+  text-align:center;
+}
+.brand{
+  font-family:'Great Vibes',cursive;
+  font-size:42px;
+  margin-bottom:6px;
+}
+.subtitle{
+  font-size:14px;
+  color:#aaa;
+  margin-bottom:22px;
+}
+.review-card{
+  background:#151515;
+  border-radius:16px;
+  padding:14px;
+  margin-bottom:12px;
+  font-size:14px;
+  line-height:1.6;
+  cursor:pointer;
+}
+.review-card:hover{
+  background:#1f1f1f;
+}
+.type-own{
+  margin-top:20px;
+  display:block;
+  background:#fff;
+  color:#000;
+  padding:14px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* Popup */
+.popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+.popup.show{display:flex;}
+.popup-box{
+  background:#fff;
+  color:#000;
+  padding:22px 26px;
+  border-radius:16px;
+  font-size:15px;
+  font-weight:500;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="brand">Miत्रा</div>
+  <div class="subtitle">Tap a review or write your own ✨</div>
+
+  <!-- 10 Review Suggestions -->
+  <div class="review-card" onclick="copyReview(this)">
+    Excellent collection at Miत्रा! All products are original and branded. Loved the quality and variety.
+  </div>
+
+  <div class="review-card" onclick="copyReview(this)">
+    One of the best stores for clothing, footwear and accessories. Genuine products and great service.
+  </div>
+
+  <div class="review-card" onclick="copyReview(this)">
+    Amazing shopping experience at Miत्रा. Premium brands, stylish collection and very helpful staff.
+  </div>
+
+  <div class="review-card" onclick="copyReview(this)">
+    Miत्रा is my go-to store for fashion. From clothes to shoes and accessories, everything is top quality.
+  </div>
+
+  <div class="review-card" onclick="copyReview(this)">
+    Loved the variety of menswear and ladies wear. 100% original products and reasonable pricing.
+  </div>
+
+  <div class="review-card" onclick="copyReview(this)">
+    Great place for branded footwear and accessories. Sports shoes and formals collection is excellent.
+  </div>
+
+  <div class="review-card" onclick="copyReview(this)">
+    Premium shopping destination. The quality, authenticity and service at Miत्रa are truly impressive.
+  </div>
+
+  <div class="review-card" onclick="copyReview(this)">
+    Fantastic store with a wide range of clothing and accessories. Highly recommended.
+  </div>
+
+  <div class="review-card" onclick="copyReview(this)">
+    Miत्रा offers authentic branded products with classy collections. Very satisfied with my purchase.
+  </div>
+
+  <div class="review-card" onclick="copyReview(this)">
+    One stop shop for fashion, footwear and accessories. Great quality and trustworthy brand.
+  </div>
+
+  <!-- Type own review -->
+  <a class="type-own" href="GOOGLE_REVIEW_LINK" target="_blank">
+    ✍️ Type your own review
+  </a>
+</div>
+
+<!-- Popup -->
+<div id="popup" class="popup">
+  <div class="popup-box">
+    ✅ Copied! <br>
+    Redirecting to Google review page…
+  </div>
+</div>
+
+<script>
+const reviewLink = "GOOGLE_REVIEW_LINK";
+
+function copyReview(el){
+  navigator.clipboard.writeText(el.innerText);
+  document.getElementById("popup").classList.add("show");
+  setTimeout(()=>{
+    window.location.href = reviewLink;
+  },1500);
+}
+</script>
+
+</body>
+</html>
